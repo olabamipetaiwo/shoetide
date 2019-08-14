@@ -8,18 +8,18 @@ import About from './components/aboutComponent';
 import Home from './components/homeComponent';
 import NotFound from './components/notFoundComponent';
 
-function App() {
+const App = () => {
   return (
      <Router>
              <div className="container">
-                   <Navbar />
-                    <Switch>
-                        <Route exact path="/" component={Home}/>            
-                        <Route exact path="/about"  component={About} />
-                        <Route exact path="/shop"  component={Shop} />
-                        <Route component={NotFound} />
-                    </Switch>     
-                    <Footer />                          
+                     <Navbar />
+                      <Switch>
+                          <Route exact path="/" component={Home}/>            
+                          <Route exact path="/about"  component={About} />
+                          <Route exact path="/shop"  component={Shop} />
+                          <Route component={NotFound} />
+                      </Switch> 
+                      <Footer />                        
               </div>
     </Router>
   );

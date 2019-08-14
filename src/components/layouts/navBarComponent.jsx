@@ -14,6 +14,7 @@ class NavBar extends Component {
                         <img className="nav__logo-item" alt="logo" src="./img/logo.png" />
                     </div> 
                     <ul className="nav__list">
+                    
                            <li>
                                 <Link className="nav__list-item" to="/shop">Shop</Link>
                            </li>
