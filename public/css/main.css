@@ -41,6 +41,7 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: right top;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,6 +87,29 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1.5rem 4rem;
   color: #06223f;
   font-weight: 800;
+  cursor: pointer;
+}
+
+.home-btn:hover {
+  color: #ebebeb;
+  background-color: #06223f;
+  border-color: #ebebeb;
+}
+
+.home-pinkshoe {
+  position: absolute;
+  bottom: 0;
+  left: 5rem;
+  width: 22rem;
+  height: 22rem;
+}
+
+.home-whiteshoe {
+  position: absolute;
+  top: 2rem;
+  right: 15rem;
+  width: 22rem;
+  height: 22rem;
 }
 
 .nav {
