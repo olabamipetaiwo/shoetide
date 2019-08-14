@@ -4,6 +4,7 @@ $darkBlue:#011325;
 $lightBlue:#06223f;
 $blue:#2c2c46;
 $black:#0e0e11;
+$white:#f2f2f5;
 
 html {
     box-sizing: border-box;
@@ -30,6 +31,7 @@ body {
     min-height: 100vh;
     color:$darkGrey;
     min-width:100%;
+    background-color:$white;
  }
 
  .container {
@@ -39,7 +41,27 @@ body {
  
 
 
- h1,h2,h3,h4,h5,h6 {
+ h1,h2,h3,h4,h5,h6,p {
     margin: 0;
     padding: 0;
  }
+
+ .grey {
+   color:$darkGrey;
+}
+
+.mb1 {
+   margin-bottom:1rem;
+}
+
+.mb2 {
+   margin-bottom:2rem;
+}
+
+.mt1 {
+   margin-top:1rem;
+}
+
+.mt2 {
+   margin-top:2rem;
+}

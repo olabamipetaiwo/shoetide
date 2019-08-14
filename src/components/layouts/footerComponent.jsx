@@ -8,7 +8,32 @@ class Footer extends Component {
     render() { 
         return (
             <Fragment>
-               <h4>Footer</h4>    
+               <footer className="footer">
+                   <div class="footer__box1">
+                        <ul>
+                            <li>
+                                <Link  to="/shop">&copy; . DayZero Group </Link>
+                            </li>
+                            <li>
+                                <Link  to="/shop">Instagram </Link>
+                            </li>
+                            <li>
+                                <Link  to="/shop">Twitter</Link>
+                            </li>
+                        </ul>
+                   </div>
+
+                   <div class="footer__box2">
+                        <ul>
+                            <li>
+                                <Link  to="/shop">Terms and Conditions</Link>
+                            </li>
+                            <li>
+                                <Link  to="/shop">Privacy Policy</Link>
+                            </li>
+                        </ul>
+                   </div>
+               </footer>
              </Fragment>
           
        );
