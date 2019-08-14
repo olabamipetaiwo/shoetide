@@ -1,0 +1,18 @@
+{
+    "version": 3,
+    "mappings": "ACOA,AAAA,IAAI,CAAC;EACD,UAAU,EAAE,UAAU;EACtB,SAAS,EAAE,KAAK;CAClB;;AAEA,AAAA,CAAC;AACD,CAAC,AAAA,QAAQ;AACT,CAAC,AAAA,OAAO,CAAC;EACP,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,OAAO;CAAG;;AAE1B,AAAA,IAAI,CAAC;EACD,WAAW,EAAE,oBAAoB;EAKjC,WAAW,EAAE,GAAG;EAChB,WAAW,EAAE,GAAG;CAClB;;AAED,AAAA,UAAU,CAAC;EACP,OAAO,EAAC,IAAI;CACf",
+    "sources": [
+        "../scss/main.scss",
+        "../scss/abstract/_base.scss",
+        "../scss/abstract/_mixins.scss",
+        "../scss/abstract/_animation.scss",
+        "../scss/components/_about.scss",
+        "../scss/components/_footer.scss",
+        "../scss/components/_home.scss",
+        "../scss/components/_navbar.scss",
+        "../scss/components/_notFound.scss",
+        "../scss/components/_shop.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
