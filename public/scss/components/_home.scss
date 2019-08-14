@@ -1,0 +1,46 @@
+.home {
+    height:100vh;
+   //background-color:$lightGrey;
+    background-color:red;
+    background-image: url('../../img/mainBg.jpg');
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    background-position:right top; 
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    &-h1 {
+        font-size:20rem;
+        line-height: 22rem;
+        font-weight:800;
+        color:$lightBlue;
+        font-family:"Ubuntu";
+    }
+
+    &-span {
+        color:$darkGrey;
+    }
+
+    &-h5 {
+        color:$lightBlue;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight:700;
+        letter-spacing:.5rem;
+        font-size:1.3rem;
+    }
+
+    &-btn {
+        outline:none;
+        background-color: transparent;
+        border-radius:1rem;
+        border:1px solid $lightBlue;
+        font-family:"Ubuntu";
+        margin-top:2rem;
+        padding:1.5rem 4rem;
+        color:$lightBlue;
+        font-weight:800;
+    }
+}

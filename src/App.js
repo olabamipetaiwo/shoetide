@@ -10,18 +10,15 @@ import NotFound from './components/notFoundComponent';
 function App() {
   return (
      <Router>
-        <Fragment>
-                <div className="container">
-                <Navbar />
-                <Home />
+             <div className="container">
+                   <Navbar />
                     <Switch>
-                        <Route exact path="/" componet={Home}/>             
+                        <Route exact path="/" component={Home}/>            
                         <Route exact path="/about"  component={About} />
                         <Route exact path="/shop"  component={Shop} />
                         <Route component={NotFound} />
                     </Switch>                               
-                </div>
-            </Fragment>
+              </div>
     </Router>
   );
 }
