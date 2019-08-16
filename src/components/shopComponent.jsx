@@ -1,31 +1,99 @@
-import React,{Fragment,useState} from 'react';
+import React,{Fragment,useState,useEffect} from 'react';
 import { Link }  from 'react-router-dom';
 
-const Shop = () => {
-   // const [title,setTitle] = useState('Tide');
+const Shop = () => {   
+   
+   const [allImages,setAllImages] = useState([
+      './img/grey/1.png',
+      './img/grey/2.png',
+      './img/grey/3.png',
+      './img/black/1.png',
+      './img/black/2.png',
+      './img/black/3.png',
+      './img/pink/1.png',
+      './img/pink/2.png',
+      './img/pink/3.png',
+      './img/white/1.png',
+      './img/white/2.png',
+      './img/white/3.png'
+   ]);
+
+   const [pickerList,setPickerList] = useState([]);
+
+   const extractColor = (item) => {
+      let imgPos = item.indexOf("g") + 1;
+      item = item.slice(imgPos);
+      imgPos = item.indexOf("/") + 1;
+      item = item.slice(imgPos);
+      let color = item.split("/")[0];
+      return color
+   };
+
+   const initialImg= allImages[0];
+   const initialColor = extractColor(initialImg);
+   let imgArray = allImages.filter((item,index) => {
+      let itemColor = extractColor(item);
+      if (itemColor == initialColor) {
+          return item
+      }
+   });
+
+    
+   useEffect(() => {
+      setPickerList(imgArray);
+      console.log("use effect ran");
+   },[]);
+
+  
+
+   const changeImg = (event) => {
+      const mainBg = document.querySelector('.cart__main__item-img');
+      const picker = document.querySelectorAll(".cart__main__picker__item-img");
+      const element = event.target;
+      const newImgSrc = element.src;
+      const alt = element.alt;
+     
+      picker.forEach((item,index) => {       
+           if(index == alt) {
+              mainBg.src = newImgSrc;
+              item.parentNode.classList.add('grayborder');
+           }else {
+              item.parentNode.classList.remove('grayborder');
+           }  
+      });
+   }
+
+   const changeImgList = (event) => {
+      let color = extractColor(event.target.src);
+      imgArray = allImages.filter((item,index) => {
+            let itemColor = extractColor(item);
+            if (itemColor === color) {
+                return item
+            }
+      });
+      setPickerList(imgArray);
+   };
 
       return (
             <Fragment>
                <section className="cart">
                    <div className="cart__main">
                         <div className="cart__main__item">
-                           <img className="cart__main__item-img" src="./img/white.png" alt="shoe" /> 
+                           <img className="cart__main__item-img" src={pickerList[0]} alt="shoe" /> 
                         </div>
                         <div className="cart__main__picker">
                               <ul >
-                                    <li> 
-                                         <img className="cart__main__picker__item-img" src="./img/1.png" alt="shoe" />
-                                    </li>  
-                                    <li> 
-                                         <img className="cart__main__picker__item-img" src="./img/3.png" alt="shoe" />
-                                    </li>  
-                                    <li> 
-                                         <img className="cart__main__picker__item-img" src="./img/pink.png" alt="shoe" />
-                                    </li>  
-                                    <li> 
-                                         <img className="cart__main__picker__item-img" src="./img/white.png" alt="shoe" />
-                                    </li>  
-                                                      
+                                    {
+                                      pickerList.map((item,index) => {
+                                          return <li key={index}>
+                                                <img 
+                                                    onClick={changeImg}
+                                                    className="cart__main__picker__item-img" 
+                                                    src={item}
+                                                    alt={index}  />
+                                          </li>
+                                      })
+                                    }                 
                               </ul>
                         </div>
 
@@ -37,32 +105,31 @@ const Shop = () => {
                           <div className="cart__details__picker mb2">
                                 <ul>
                                     <li> 
-                                          <img  src="./img/1.png" alt="shoe" />
+                                        <img  onClick={changeImgList} src={allImages[0]} alt="grey" />
                                     </li> 
                                     <li> 
-                                          <img  src="./img/3.png" alt="shoe" />
+                                          <img onClick={changeImgList} src={allImages[3]} alt="black" />
                                     </li>
                                     <li> 
-                                          <img  src="./img/white.png" alt="shoe" />
+                                          <img  onClick={changeImgList} src={allImages[6]} alt="pink" />
                                     </li>
                                     <li> 
-                                          <img  src="./img/pink.png" alt="shoe" />
+                                          <img onClick={changeImgList}  src={allImages[9]} alt="white" />
                                     </li> 
                               </ul>                          
                          </div>
 
                          <p  className="cart__details__selectsize ">Select size</p>
                          <div className="cart__details__size mb2">
-                              <button class="cart__details__size-btn">48</button>
-                              <button class="cart__details__size-btn">48</button>
-                              <button class="cart__details__size-btn">48</button>
-                              <button class="cart__details__size-btn">48</button>
-                              <button class="cart__details__size-btn">48</button>
-                              <button class="cart__details__size-btn">48</button>
-                              <button class="cart__details__size-btn">48</button>
-                              <button class="cart__details__size-btn">48</button>
-                              <button class="cart__details__size-btn">48</button>
-                              <button class="cart__details__size-btn">48</button>
+                              <button className="cart__details__size-btn">48</button>
+                              <button className="cart__details__size-btn">48</button>
+                              <button className="cart__details__size-btn">48</button>
+                              <button className="cart__details__size-btn">48</button>
+                              <button className="cart__details__size-btn">48</button>
+                              <button className="cart__details__size-btn">48</button>
+                              <button className="cart__details__size-btn">48</button>
+                              <button className="cart__details__size-btn">48</button>
+                               <button className="cart__details__size-btn">48</button>
                          </div>
                          <div className="cart__details__form">
                               <input
@@ -88,25 +155,25 @@ const Shop = () => {
                         </div>
                    </div>
                </section>
-               <section class="shop-features">
-                    <div class="shop-features__imgbox">
+               <section className="shop-features">
+                    <div className="shop-features__imgbox">
                         <img className="" src="./img/feature.jpg" alt="shoe" />
                     </div>
-                    <div class="shop-features__textbox">
+                    <div className="shop-features__textbox">
                           <h1> 
                                 <span> STRETCH,</span> LACES, SO YOU ONLY HAVE
                                 TO TIE YOUR SHOE ONCE
                          </h1>
                     </div>
                </section>
-               <section class="shop-features">
-                  <div class="shop-features__textbox">
+               <section className="shop-features">
+                  <div className="shop-features__textbox">
                           <h1> 
                                 <span> A LIGHTWEIGHT FOAM MIDSOLE,</span> DELIVERS
                                 CLOUD-LIKE CUSHION.
                          </h1>
                     </div>
-                    <div class="shop-features__imgbox">
+                    <div className="shop-features__imgbox">
                         <img className="" src="./img/feature2.jpg" alt="shoe" />
                     </div>
                    

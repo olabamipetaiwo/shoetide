@@ -9,7 +9,7 @@ class Footer extends Component {
         return (
             <Fragment>
                <footer className="footer">
-                   <div class="footer__box1">
+                   <div className="footer__box1">
                         <ul>
                             <li>
                                 <Link  to="/shop">&copy; . DayZero Group </Link>
@@ -23,7 +23,7 @@ class Footer extends Component {
                         </ul>
                    </div>
 
-                   <div class="footer__box2">
+                   <div className="footer__box2">
                         <ul>
                             <li>
                                 <Link  to="/shop">Terms and Conditions</Link>

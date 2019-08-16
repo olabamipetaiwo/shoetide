@@ -41,18 +41,18 @@
                         height:60%;
                         flex-grow:0;
                         flex-shrink:0;
+                        border-radius:3%; 
+
+                        // &:hover {    
+                        //     border: 3px solid $darkGrey;
+                        //     transform:scale(1.2);
+                        // }
 
                         img {
                             width:100%;
                             height:100%;
                             transition:all .2s;
                             cursor:pointer;
-    
-                            &:hover {   
-                              border-radius:3%;     
-                              border: 3px solid $darkGrey;
-                              transform:scale(1.2);
-                            }
                         }
                   }
             }
@@ -91,6 +91,7 @@
                 padding:5% 0;
                 flex-wrap:wrap;
                 border-bottom:1px solid $lightGrey;
+                cursor:pointer;
                 
                 
     
@@ -131,14 +132,17 @@
             flex-wrap:wrap;
             border-bottom:1px solid $darkGrey;
             padding-bottom:1.5rem;
+            font-family:"Ubuntu";
 
             &-btn {
+                font-family:"Ubuntu";
                 outline:none;
+                cursor:pointer;
                 text-align:center;
                 padding:1rem;
                 color:black;
                 border-radius:5px;
-                border:1px solid $darkGrey;
+                border:1px solid $lightGrey;
                 background-color:#fff;
                 margin-right:1rem;
                 margin-bottom:.4rem;
@@ -156,7 +160,10 @@
             border-bottom:1px solid $lightGrey;
 
             &-input {
-                height:2.8rem;
+                padding:1.5rem 3rem;
+                border-radius:6px;
+                outline:none;
+                border:1px solid $lightGrey;
 
                 &::placeholder {
                     color:$lightGrey;
@@ -174,18 +181,22 @@
             }
 
             button {
+                font-family:"Ubuntu";
+                font-weight:800;
+                cursor:pointer;
                 width:100%;
                 outline:none;
+                border:none;
                 text-align:center;
                 color:#fff;
-                border:none;
+                border-radius:6px;
                 background-color:black;
                 transition:all .2s;
-                padding:1rem 3rem;
+                padding:1.5rem 3rem;
 
                 &:hover{
                     color:black;
-                   background-color:#fff;
+                     background-color:#fff;
                 }
 
                 
