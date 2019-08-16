@@ -64,14 +64,28 @@ const Shop = () => {
    }
 
    const changeImgList = (event) => {
-      let color = extractColor(event.target.src);
-      imgArray = allImages.filter((item,index) => {
-            let itemColor = extractColor(item);
-            if (itemColor === color) {
-                return item
-            }
-      });
-      setPickerList(imgArray);
+      const detailsPicker = document.querySelectorAll(".cart__details__picker__item-img");
+      const element = event.target;
+      const alt = element.getAttribute("data-item");
+
+
+      detailsPicker.forEach((item,index) => {       
+            if(index == alt) {
+                  let color = extractColor(event.target.src);
+                  imgArray = allImages.filter((item,index) => {
+                        let itemColor = extractColor(item);
+                        if (itemColor === color) {
+                            return item
+                        }
+                  });
+                  setPickerList(imgArray);
+               item.parentNode.classList.add('grayborder');
+            }else {
+               item.parentNode.classList.remove('grayborder');
+            }  
+       }); 
+
+      
    };
 
       return (
@@ -105,16 +119,16 @@ const Shop = () => {
                           <div className="cart__details__picker mb2">
                                 <ul>
                                     <li> 
-                                        <img  onClick={changeImgList} src={allImages[0]} alt="grey" />
+                                        <img  className="cart__details__picker__item-img" data-item="0" onClick={changeImgList} src={allImages[0]} alt="grey" />
                                     </li> 
                                     <li> 
-                                          <img onClick={changeImgList} src={allImages[3]} alt="black" />
+                                          <img className="cart__details__picker__item-img" data-item="1" onClick={changeImgList} src={allImages[3]} alt="black" />
                                     </li>
                                     <li> 
-                                          <img  onClick={changeImgList} src={allImages[6]} alt="pink" />
+                                          <img className="cart__details__picker__item-img" data-item="2" onClick={changeImgList} src={allImages[6]} alt="pink" />
                                     </li>
                                     <li> 
-                                          <img onClick={changeImgList}  src={allImages[9]} alt="white" />
+                                          <img className="cart__details__picker__item-img" data-item="3" onClick={changeImgList}  src={allImages[9]} alt="white" />
                                     </li> 
                               </ul>                          
                          </div>

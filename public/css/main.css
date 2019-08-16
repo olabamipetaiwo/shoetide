@@ -60,7 +60,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .grayborder {
-  border: 3px solid #898a95;
+  border: 2px solid #898a95;
+  border-radius: 4px;
 }
 
 .shoe {
@@ -684,12 +685,6 @@ h1, h2, h3, h4, h5, h6, p {
   -webkit-transform: scale(1);
           transform: scale(1);
   border: 1px solid #ebebeb;
-}
-
-.cart__details__picker ul li img:hover {
-  border: 5px solid #ebebeb;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
 }
 
 .cart__details__selectsize {

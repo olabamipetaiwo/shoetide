@@ -71,5 +71,6 @@ body {
 }
 
 .grayborder {
-   border :3px solid $darkGrey;
+   border :2px solid $darkGrey;
+   border-radius:4px;
 }
