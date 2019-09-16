@@ -1,7 +1,7 @@
 import React,{Fragment,useState,useEffect} from 'react';
-import { Link }  from 'react-router-dom';
 
-const Shop = () => {   
+const Shop = () => {  
+      
    
    const [allImages,setAllImages] = useState([
       './img/grey/1.png',
@@ -18,7 +18,24 @@ const Shop = () => {
       './img/white/3.png'
    ]);
 
+   const [size,setSize] = useState([
+      30,31,32,33,34,35,36,37,38,39
+   ]);
+   const [chosenSize,setChosenSize] = useState(size[0]);
+   const [quantity,setQuantity] = useState(1);
    const [pickerList,setPickerList] = useState([]);
+   const [order,setOrder] = useState({
+         email:'',
+         color:'',
+         size:0,
+         quantity:'',
+         address:'lagosByDefault',
+         amount:0,
+         transaction:'',
+         channel:'',
+         reference:''
+   });
+   let newQuantity;
 
    const extractColor = (item) => {
       let imgPos = item.indexOf("g") + 1;
@@ -26,7 +43,7 @@ const Shop = () => {
       imgPos = item.indexOf("/") + 1;
       item = item.slice(imgPos);
       let color = item.split("/")[0];
-      return color
+      return color;
    };
 
    const initialImg= allImages[0];
@@ -34,14 +51,13 @@ const Shop = () => {
    let imgArray = allImages.filter((item,index) => {
       let itemColor = extractColor(item);
       if (itemColor == initialColor) {
-          return item
+          return item;
       }
    });
 
     
    useEffect(() => {
       setPickerList(imgArray);
-      console.log("use effect ran");
    },[]);
 
   
@@ -79,14 +95,61 @@ const Shop = () => {
                         }
                   });
                   setPickerList(imgArray);
-               item.parentNode.classList.add('grayborder');
+                  item.parentNode.classList.add('grayborder');
             }else {
                item.parentNode.classList.remove('grayborder');
             }  
-       }); 
-
-      
+       });   
    };
+
+   const pickSize = (e) => {
+         e.preventDefault();
+         let newSize = e.target.childNodes[0].nodeValue;
+         const sizeButton = document.querySelectorAll(".cart__details__size-btn");
+         sizeButton.forEach((item,index) => {
+            let itemSize = item.childNodes[0].nodeValue
+            if (itemSize === newSize) {
+               item.style.border="3px solid #898a95";
+            }else {
+              item.style.border="1px solid #ebebeb";
+            }
+         });
+         setChosenSize(newSize);
+   }
+
+   const increaseQuantity = (e) => {
+        newQuantity = quantity + 1;
+        setQuantity(newQuantity);
+   }
+
+   const decreaseQuantity = (e) => {
+      newQuantity = quantity - 1;
+      if(newQuantity < 1) {
+          setQuantity(1);
+      }else {
+          setQuantity(newQuantity);
+      }
+   }
+
+   const getAddress = (e) => {
+      console.log(e.target.value);
+      setOrder({
+            email:'',
+            color:'',
+            size:0,
+            quantity:'',
+            address:e.target.value,
+            amount:0,
+            transaction:'',
+            channel:'',
+            reference:''
+      });
+   }
+   const callPayStack = ()  => {
+        console.log("PayStack Called"); 
+   }
+
+
 
       return (
             <Fragment>
@@ -110,11 +173,19 @@ const Shop = () => {
                                     }                 
                               </ul>
                         </div>
-
                    </div>
                    <div className="cart__details">
                           <h2>Tide Black</h2>
                           <h5>$39.99</h5>
+                          <p> {
+                                order.size
+                          }</p>
+                          <p> {
+                                order.address
+                          }</p>
+                           <p> {
+                                order.amount
+                          }</p>
 
                           <div className="cart__details__picker mb2">
                                 <ul>
@@ -133,25 +204,36 @@ const Shop = () => {
                               </ul>                          
                          </div>
 
+
+
                          <p  className="cart__details__selectsize ">Select size</p>
-                         <div className="cart__details__size mb2">
-                              <button className="cart__details__size-btn">48</button>
-                              <button className="cart__details__size-btn">48</button>
-                              <button className="cart__details__size-btn">48</button>
-                              <button className="cart__details__size-btn">48</button>
-                              <button className="cart__details__size-btn">48</button>
-                              <button className="cart__details__size-btn">48</button>
-                              <button className="cart__details__size-btn">48</button>
-                              <button className="cart__details__size-btn">48</button>
-                               <button className="cart__details__size-btn">48</button>
+                         <div className="cart__details__size  mb2">{
+                                    size.map((siz,index) => {
+                                       return <button 
+                                                key={index}
+                                                className="cart__details__size-btn"
+                                                onClick={pickSize}>
+                                                {siz}
+                                          </button>
+                                    })
+                              }
                          </div>
+                         <div className="cart__details__quantity mb2">
+                               <button onClick={decreaseQuantity} >-</button>
+                               <p>{quantity}</p>
+                               <button  onClick={increaseQuantity}>+</button>
+                         </div>
+
                          <div className="cart__details__form">
                               <input
                                      placeholder="Enter Delivery Address"
                                      type="text" 
                                      className="cart__details__form-input mbxs"
-                                      name="address" />
-                              <button className="mb2">I WANT ONE</button>
+                                     name="address"
+                                     onChange={getAddress} />
+                              <button
+                                     onClick={callPayStack}
+                                     className="mb2">I WANT ONE</button>
                               <h6 className="mb2">Free Delivery within Lagos</h6>
                          </div>
                          <div className="cart__details__social">

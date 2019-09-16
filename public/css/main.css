@@ -4,13 +4,19 @@ html {
   font-size: 62.5%;
 }
 
+@media only screen and (max-width: 56.25rem) {
+  html {
+    font-size: 50%;
+  }
+}
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -66,24 +72,40 @@ h1, h2, h3, h4, h5, h6, p {
 
 .shoe {
   background-color: #ebebeb;
+  max-width: 100vw;
 }
 
 .shoe__box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 90vh;
+  width: 100%;
+  height: 70vh;
   padding: 3rem;
 }
 
+@media only screen and (width: 1024px) {
+  .shoe__box {
+    height: 50vh;
+  }
+}
+
+@media only screen and (max-width: 43.75rem) {
+  .shoe__box {
+    height: 40vh;
+  }
+}
+
+@media only screen and (max-width: 18.75rem) {
+  .shoe__box {
+    height: 30vh;
+  }
+}
+
 .shoe__box-item {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
   height: 100%;
+  width: 100%;
 }
 
 .shoe__desc {
-  min-height: 70vh;
+  min-height: 50vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,10 +119,36 @@ h1, h2, h3, h4, h5, h6, p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
+}
+
+@media only screen and (width: 1024px) {
+  .shoe__desc {
+    min-height: 30vh;
+  }
+}
+
+@media only screen and (max-width: 43.75rem) {
+  .shoe__desc {
+    min-height: 40vh;
+  }
 }
 
 .shoe__desc-box {
   width: 40%;
+}
+
+@media only screen and (max-width: 56.25rem) {
+  .shoe__desc-box {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .shoe__desc-box {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .shoe__desc-box h2 {
@@ -123,7 +171,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .hire {
-  min-height: 70vh;
+  min-height: 50vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,9 +187,33 @@ h1, h2, h3, h4, h5, h6, p {
           align-items: center;
 }
 
+@media only screen and (width: 1024px) {
+  .hire {
+    min-height: 15vh;
+  }
+}
+
+@media only screen and (max-width: 43.75rem) {
+  .hire {
+    min-height: 15vh;
+  }
+}
+
 .hire__box {
   width: 40%;
   text-align: center;
+}
+
+@media only screen and (max-width: 56.25rem) {
+  .hire__box {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 18.75rem) {
+  .hire__box {
+    width: 80%;
+  }
 }
 
 .hire__box h2 {
@@ -150,6 +222,12 @@ h1, h2, h3, h4, h5, h6, p {
   line-height: 2rem;
   font-weight: 800;
   font-family: "Ubuntu";
+}
+
+@media only screen and (max-width: 18.75rem) {
+  .hire__box h2 {
+    line-height: 2.5rem;
+  }
 }
 
 .hire__box p {
@@ -183,6 +261,18 @@ h1, h2, h3, h4, h5, h6, p {
           align-items: center;
 }
 
+@media only screen and (width: 1024px) {
+  .social {
+    height: 10vh;
+  }
+}
+
+@media only screen and (max-width: 43.75rem) {
+  .social {
+    height: 10vh;
+  }
+}
+
 .social__box {
   width: 40%;
   display: -webkit-box;
@@ -198,6 +288,12 @@ h1, h2, h3, h4, h5, h6, p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media only screen and (max-width: 25rem) {
+  .social__box {
+    width: 70%;
+  }
 }
 
 .social__box h2 {
@@ -236,10 +332,31 @@ h1, h2, h3, h4, h5, h6, p {
   height: 10rem;
 }
 
+@media only screen and (max-width: 25rem) {
+  .footer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .footer__box1 {
   font-family: "Ubuntu";
-  -ms-flex-preferred-size: 30%;
-      flex-basis: 30%;
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
+}
+
+@media only screen and (max-width: 37.5rem) {
+  .footer__box1 {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+}
+
+@media only screen and (max-width: 25rem) {
+  .footer__box1 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
 }
 
 .footer__box1 ul {
@@ -254,9 +371,23 @@ h1, h2, h3, h4, h5, h6, p {
           justify-content: space-between;
 }
 
+@media only screen and (max-width: 25rem) {
+  .footer__box1 ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .footer__box1 ul li a {
   text-decoration: none;
   color: #011325;
+}
+
+@media only screen and (max-width: 25rem) {
+  .footer__box1 ul li a {
+    margin-right: 2.5rem;
+  }
 }
 
 .footer__box1 ul li a:hover {
@@ -265,8 +396,22 @@ h1, h2, h3, h4, h5, h6, p {
 
 .footer__box2 {
   font-family: "Ubuntu";
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+}
+
+@media only screen and (max-width: 37.5rem) {
+  .footer__box2 {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+}
+
+@media only screen and (max-width: 25rem) {
+  .footer__box2 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
 }
 
 .footer__box2 ul {
@@ -281,9 +426,23 @@ h1, h2, h3, h4, h5, h6, p {
           justify-content: space-between;
 }
 
+@media only screen and (max-width: 25rem) {
+  .footer__box2 ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .footer__box2 ul li a {
   text-decoration: none;
   color: #011325;
+}
+
+@media only screen and (max-width: 25rem) {
+  .footer__box2 ul li a {
+    margin-right: 1.5rem;
+  }
 }
 
 .footer__box2 ul li a:hover {
@@ -313,12 +472,37 @@ h1, h2, h3, h4, h5, h6, p {
           align-items: center;
 }
 
+@media only screen and (max-width: 50rem) {
+  .home {
+    height: 70vh;
+  }
+}
+
+@media only screen and (max-width: 37.5rem) {
+  .home {
+    height: 40vh;
+  }
+}
+
 .home-h1 {
   font-size: 20rem;
   line-height: 22rem;
   font-weight: 800;
   color: #06223f;
   font-family: "Ubuntu";
+}
+
+@media only screen and (max-width: 50rem) {
+  .home-h1 {
+    font-size: 15rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .home-h1 {
+    font-size: 10rem;
+    line-height: 12rem;
+  }
 }
 
 .home-span {
@@ -333,6 +517,12 @@ h1, h2, h3, h4, h5, h6, p {
   font-size: 1.3rem;
 }
 
+@media only screen and (max-width: 50rem) {
+  .home-h5 {
+    font-size: 2rem;
+  }
+}
+
 .home-btn {
   outline: none;
   background-color: transparent;
@@ -344,6 +534,16 @@ h1, h2, h3, h4, h5, h6, p {
   color: #06223f;
   font-weight: 800;
   cursor: pointer;
+}
+
+.home-btn a:link, .home-btn a:visited {
+  text-decoration: none;
+  color: #06223f;
+}
+
+.home-btn a:hover {
+  color: #ebebeb;
+  background-color: #06223f;
 }
 
 .home-btn:hover {
@@ -360,6 +560,15 @@ h1, h2, h3, h4, h5, h6, p {
   height: 22rem;
 }
 
+@media only screen and (max-width: 25rem) {
+  .home-pinkshoe {
+    left: 1rem;
+    bottom: 1rem;
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
 .home-whiteshoe {
   position: absolute;
   top: 2rem;
@@ -368,12 +577,27 @@ h1, h2, h3, h4, h5, h6, p {
   height: 22rem;
 }
 
+@media only screen and (max-width: 25rem) {
+  .home-whiteshoe {
+    top: 1.3rem;
+    right: 5rem;
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
 .adv {
   background-color: #fff;
   margin-top: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media only screen and (max-width: 25rem) {
+  .adv {
+    min-height: 30vh;
+  }
 }
 
 .adv__image {
@@ -415,6 +639,13 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: "Ubuntu";
 }
 
+@media only screen and (max-width: 25rem) {
+  .adv__box-h3 {
+    font-size: 2.5rem;
+    line-height: 2.9rem;
+  }
+}
+
 .adv__box-p {
   margin-top: 1rem;
   font-size: 1.5em;
@@ -433,8 +664,20 @@ h1, h2, h3, h4, h5, h6, p {
           align-items: center;
 }
 
+@media only screen and (max-width: 62.5rem) {
+  .details {
+    min-height: 40vh;
+  }
+}
+
 .details__box {
   padding: 0 8rem;
+}
+
+@media only screen and (max-width: 25rem) {
+  .details__box {
+    padding: 0 4rem;
+  }
 }
 
 .details-h3 {
@@ -443,6 +686,12 @@ h1, h2, h3, h4, h5, h6, p {
   font-weight: 800;
   width: 70%;
   line-height: 3.4rem;
+}
+
+@media only screen and (max-width: 25rem) {
+  .details-h3 {
+    font-size: 2rem;
+  }
 }
 
 .details-p {
@@ -469,11 +718,23 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: #898a95;
 }
 
+@media only screen and (max-width: 62.5rem) {
+  .cta {
+    min-height: 30vh;
+  }
+}
+
 .cta-h3 {
   color: #f2f2f5;
   font-size: 3.5rem;
   font-weight: 800;
   font-family: "Ubuntu";
+}
+
+@media only screen and (max-width: 25rem) {
+  .cta-h3 {
+    font-size: 2.5rem;
+  }
 }
 
 .cta-btn {
@@ -486,6 +747,22 @@ h1, h2, h3, h4, h5, h6, p {
   color: #f2f2f5;
   font-weight: 800;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 25rem) {
+  .cta-btn {
+    padding: 1.3rem 3.6rem;
+  }
+}
+
+.cta-btn a:link, .cta-btn a:visited {
+  text-decoration: none;
+  color: #f2f2f5;
+}
+
+.cta-btn a:hover {
+  color: #0e0e11;
+  background-color: #f2f2f5;
 }
 
 .cta-btn:hover {
@@ -687,6 +964,32 @@ h1, h2, h3, h4, h5, h6, p {
   border: 1px solid #ebebeb;
 }
 
+.cart__details__quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+  font-size: 2rem;
+  color: #011325;
+}
+
+.cart__details__quantity button {
+  background-color: #011325;
+  color: #f2f2f5;
+  outline: none;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .cart__details__selectsize {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -717,11 +1020,9 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: #fff;
   margin-right: 1rem;
   margin-bottom: .4rem;
-  -webkit-transition: all .2s;
-  transition: all .2s;
 }
 
-.cart__details__size-btn:hover {
+.cart__details__size-btn:first-child {
   border: 3px solid #898a95;
 }
 
@@ -867,5 +1168,26 @@ h1, h2, h3, h4, h5, h6, p {
 
 .shop-features__textbox h1 span {
   color: #011325;
+}
+
+.button {
+  font-family: "Ubuntu";
+  font-weight: 800;
+  cursor: pointer;
+  width: 100%;
+  outline: none;
+  border: none;
+  text-align: center;
+  color: #fff;
+  border-radius: 6px;
+  background-color: black;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  padding: 1.5rem 3rem;
+}
+
+.button:hover {
+  color: black;
+  background-color: #fff;
 }
 /*# sourceMappingURL=main.css.map */

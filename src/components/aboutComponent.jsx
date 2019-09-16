@@ -1,8 +1,7 @@
-import React,{Fragment,useState} from 'react';
-import { Link }  from 'react-router-dom';
+import React,{Fragment} from 'react';
+// import { Link }  from 'react-router-dom';
 
 const About = () => {
-   // const [title,setTitle] = useState('Tide');
         return (
             <Fragment>
                 <section className="shoe">
