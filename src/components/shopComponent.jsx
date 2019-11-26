@@ -177,15 +177,7 @@ const Shop = () => {
                    <div className="cart__details">
                           <h2>Tide Black</h2>
                           <h5>$39.99</h5>
-                          <p> {
-                                order.size
-                          }</p>
-                          <p> {
-                                order.address
-                          }</p>
-                           <p> {
-                                order.amount
-                          }</p>
+                          
 
                           <div className="cart__details__picker mb2">
                                 <ul>

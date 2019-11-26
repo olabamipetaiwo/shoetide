@@ -11,6 +11,10 @@
             height:50vh;
         }
 
+        @media only screen and (max-width:$bp-md) {
+            height:40vh;
+        }
+
         @media only screen and (max-width:$bp-lg) {
             height:40vh;
         }
@@ -36,6 +40,10 @@
         @media only screen and (width:1024px) {
             min-height:30vh;
         }
+
+        @media only screen and (max-width:$bp-md) {
+            min-height:40vh
+         }
 
         @media only screen and (max-width:$bp-lg) {
            min-height:40vh
@@ -90,6 +98,10 @@
 
     @media only screen and (width:1024px) {
         min-height:15vh;
+    }
+
+    @media only screen and (max-width:$bp-md) {
+        min-height:20vh;
     }
 
     @media only screen and (max-width:$bp-lg) {
@@ -147,7 +159,7 @@
         height:10vh;
     }
 
-    @media only screen and (max-width:$bp-lg) {
+    @media only screen and (max-width:$bp-md) {
         height:10vh;
     }
 
@@ -193,6 +205,3 @@
 }
 
 
-@media only screen and (max-width:$landscape) {
-
- }

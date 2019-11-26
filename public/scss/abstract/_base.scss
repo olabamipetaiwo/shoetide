@@ -7,24 +7,37 @@ $black:#0e0e11;
 $white:#f2f2f5;
 
 //breakpoints
-$bp-lg:75rem; //1200px/16
-$bp-lg1:62.5rem ;//1000px
-$bp-md:50rem;//800px 
-$bp-lg:43.75rem;//700px
-$bp-sm:37.5rem;//600px
+$big-desktop:112.3em;//1800
+$bp-lg:75em; //1200px/16
+$bp-lg1:62.5em ;//1000px
+$landscape:56.25em;//900px
+$bp-md:50em;//800px 
+$bp-lg:43.75em;//700px
+$bp-sm:37.5em;//600px
+$por:37.5em;//600px
+$por-md:25em;//400px
+$por-sm:18.75em;//300px
 
-$landscape:56.25rem;//900px
-$por:37.5rem;//600px
-$por-md:25rem;//400px
-$por-sm:18.75rem;//300px
 
 
 html {
     box-sizing: border-box;
     font-size: 62.5%;
 
-    @media only screen and (max-width:$landscape) {
-      font-size: 50%;
+    @media only screen and (max-width:$big-desktop) {
+      font-size:75%;
+   }
+
+   @media only screen and (max-width:$bp-lg) {
+      font-size:56.25%;
+   }
+
+   @media only screen and (max-width:$landscape) {
+      font-size:50%;
+   }
+
+   @media only screen and (max-width:$bp-sm) {
+      font-size:40%;
    }
  }
   
