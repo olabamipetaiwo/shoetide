@@ -2,7 +2,6 @@ import React,{Fragment} from 'react';
 import { Link }  from 'react-router-dom';
 
 const Home = () => {
-   // const [title,setTitle] = useState('Tide');
 
         return (
             <Fragment>
@@ -12,12 +11,12 @@ const Home = () => {
                     <button className="home-btn">
                            <Link to="/shop">SHOP NOW</Link>
                     </button>
-                    <img className="home-pinkshoe" src="./img/pink.png" alt="pinkshoe" />
-                    <img className="home-whiteshoe" src="./img/white.png" alt="whiteshoe" />
+                    <img className="home-pinkshoe" src="https://res.cloudinary.com/dbif8p032/image/upload/v1591924744/pink_niojih.png" alt="pinkshoe" />
+                    <img className="home-whiteshoe" src="https://res.cloudinary.com/dbif8p032/image/upload/v1591924714/white_gou8ss.png" alt="whiteshoe" />
                  </section>
                  <section className="adv">
                      <div className="adv__image">
-                         <img className="adv__image-item" src="./img/advBg.jpg" alt="whiteshoe" />
+                         <img className="adv__image-item" src="https://res.cloudinary.com/dbif8p032/image/upload/v1591924783/advbg_iypzfu.jpg" alt="whiteshoe" />
                      </div>
                      <div className="adv__box">
                          <h3 className="adv__box-h3">The best-fitting everyday Shoe</h3>

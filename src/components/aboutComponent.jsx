@@ -1,12 +1,11 @@
 import React,{Fragment} from 'react';
-// import { Link }  from 'react-router-dom';
 
 const About = () => {
         return (
             <Fragment>
                 <section className="shoe">
                        <div class="shoe__box">
-                            <img className="shoe__box-item" src="./img/shoe.jpg" alt="shoe" />
+                            <img className="shoe__box-item" src="https://res.cloudinary.com/dbif8p032/image/upload/v1591924746/shoe_uj3jzr.png" alt="shoe" />
                        </div>
                        <div class="shoe__desc">
                           <div className="shoe__desc-box">

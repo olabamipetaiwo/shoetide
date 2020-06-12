@@ -11,7 +11,7 @@ class NavBar extends Component {
             <Fragment>
                 <nav className="nav">
                     <div className="nav__logo">
-                        <img className="nav__logo-item" alt="logo" src="./img/logo.png" />
+                        <img className="nav__logo-item" alt="logo" src="https://res.cloudinary.com/dbif8p032/image/upload/v1591924764/logo_v4zmkx.png" />
                     </div> 
                     <ul className="nav__list">
                     

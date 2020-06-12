@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router,Switch,Route}  from 'react-router-dom';
-// import PropTypes from 'prop-types';
 import Navbar from './components/layouts/navBarComponent';
 import Footer from './components/layouts/footerComponent';
 import Shop from './components/shopComponent';

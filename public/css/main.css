@@ -488,7 +488,7 @@ h1, h2, h3, h4, h5, h6, p {
 .home {
   height: 100vh;
   background-color: #ebebeb;
-  background-image: url("../../img/mainBg.jpg");
+  /* background-image: url("../../img/mainBg.jpg"); */
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: right top;
@@ -586,6 +586,11 @@ h1, h2, h3, h4, h5, h6, p {
   color: #ebebeb;
   background-color: #06223f;
   border-color: #ebebeb;
+}
+
+.home-btn:hover a {
+  color: #ebebeb;
+  background-color: #06223f;
 }
 
 .home-pinkshoe {
