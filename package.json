@@ -1,6 +1,5 @@
 {
-  "homepage": "http://olabamipetaiwo.github.io/shoetide",
-  "name": "tide",
+  "name": "shoetide",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
