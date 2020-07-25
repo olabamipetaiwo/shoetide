@@ -123,14 +123,16 @@ const getReference = async () => {
    const initialColor = extractColor(initialImg);
    let imgArray = allImages.filter((item,index) => {
       let itemColor = extractColor(item);
-      if (itemColor == initialColor) {
+      if (itemColor === initialColor) {
           return item;
       }
+      //  return true;
    });
 
     
    useEffect(() => {
       setPickerList(imgArray);
+      // eslint-disable-next-line
    },[]);
 
   
@@ -142,7 +144,8 @@ const getReference = async () => {
       const newImgSrc = element.src;
       const alt = element.alt;
      
-      picker.forEach((item,index) => {       
+      picker.forEach((item,index) => {      
+            // eslint-disable-next-line 
            if(index == alt) {
               mainBg.src = newImgSrc;
               item.parentNode.classList.add('grayborder');
@@ -158,7 +161,8 @@ const getReference = async () => {
       const alt = element.getAttribute("data-item");
 
 
-      detailsPicker.forEach((item,index) => {       
+      detailsPicker.forEach((item,index) => {
+            // eslint-disable-next-line       
             if(index == alt) {
                   let color = extractColor(event.target.src);
                   imgArray = allImages.filter((item,index) => {
@@ -166,6 +170,7 @@ const getReference = async () => {
                         if (itemColor === color) {
                             return item
                         }
+                        //  return true;
                   });
                   setPickerList(imgArray);
                   item.parentNode.classList.add('grayborder');
@@ -217,9 +222,6 @@ const getReference = async () => {
             channel:'',
             reference:''
       });
-   }
-   const callPayStack = ()  => {
-        console.log("PayStack Called"); 
    }
 
 
